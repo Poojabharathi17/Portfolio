@@ -15,7 +15,6 @@
     --link-hover-color: rgba(255,255,255,.2);
     --title-font-family: 'Playfair Display', 'serif';
     --body-font-family: 'Poppins', 'sans-serif';
-    --container-width: 96rem;
     --container-padding: 1.5rem;
     --section-vertical-spacing: 8rem;
 }
@@ -74,7 +73,7 @@ textarea{
 }
 
 .container{
-  max-width: var(--container-width);
+  max-width: 54rem;
   margin: 0 auto;
   padding: 0 var(--container-padding);
 }
@@ -268,7 +267,7 @@ textarea{
 .inline-image.has-sparkles::after{
   width: -8rem;
   height: .8rem;
-  top: 1rem;
+  bottom: 1rem;
   right:  -1.5rem
 }
 
@@ -306,10 +305,10 @@ textarea{
 }
 
 .description-image{
-  width: 25rem;
+  width: 23rem;
   height: 25rem;
   margin: 0 auto;
-  transform: rotate(25deg);
+
 }
 
 .description-image img{
@@ -330,9 +329,11 @@ textarea{
 }
 
 .description-image.has-sparkles::before{
-  top: 10rem;
-  right: -1rem;
+  top: 0rem;
+  right: -3rem;
 }
+
+
 
 .tech-stack{
   max-width: 50rem;
@@ -462,7 +463,7 @@ textarea{
 
 .portfolio-card:hover .card-image,
 .portfolio-card:focus .card-image{
-  background-color: #ff7575;
+  background-color: black;
 }
 
 .card-heading{
@@ -611,3 +612,63 @@ textarea{
   background-color: #808694;
 }
 
+@media screen and (min-width: 768px){
+
+  .container{
+    max-width: 96rem;
+  }
+
+  .inline-image{
+    width: 15rem;
+    height: 15rem;
+  }
+
+  .inline-image.has-sparkles::before{
+    width: 1.5rem;
+    height: 1.5rem;
+    top: -1.5rem;
+    right: -1.5rem;
+  }
+
+  .section-description{
+    grid-template-columns: 1.5fr 1fr;
+    align-items: center;
+  }
+
+  .description{
+    font-size: 2.4rem;
+  }
+
+  .description-image{
+    width: 30rem;
+    height: 30rem;
+  }
+
+  .portfolio-cards{
+    grid-template-columns: repeat(8, 1fr);
+  }
+
+  .portfolio-card-1{
+    grid-column: 2/6;
+    grid-row: 1/span 10;
+  }
+
+  .portfolio-card-2{
+    grid-column: 4/-2;
+    grid-row: 22/span 10;
+  }
+
+  .inline-group{
+    display: flex;
+    column-gap: 5rem;
+  }
+
+  .input{
+    width: 100%;
+  }
+
+  .footer-container{
+    padding-block: 5rem;
+    }
+  
+}
