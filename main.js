@@ -1,56 +1,74 @@
-const menuToggleButton = document.querySelector('.menu-toggle-button');
-const menuElement = document.querySelector('.menu');
+let spinnerWrapper = document.querySelector('.spinner-wrapper');
+window.addEventListener('load', function () {
+    spinnerWrapper.parentElement.removeChild(spinnerWrapper);
+});
 
-const toggleMenu = () => {
-      menuElement.classList.toggle('active');
-      menuToggleButton.classList.toggle('active');
-};
-menuToggleButton.addEventListener('click', toggleMenu);
+const showMenu = (toggleId, navId) =>{
+    const toggle = document.getElementById(toggleId),
+    nav = document.getElementById(navId)
 
-const removeActiveLinkClass = e => {
-      if(e.target.classList.contains('list-link')){
-            menuElement.classList.remove('active');
-            menuToggleButton.classList.remove('active');
-      }
+    if(toggle && nav){
+        toggle.addEventListener('click',()=>{
+            nav.classList.toggle('show')
+            
+        })
+    }
 }
+showMenu('nav-toggle','nav-menu')
 
-document.addEventListener('click', removeActiveLinkClass);
 
-const themeToggleButton = document.querySelector('.theme-toggle-button');
-const bodyElement = document.body;
-const currentTheme = localStorage.getItem('darkTheme');
+const navLink = document.querySelectorAll('.nav_link')
+function linkAction(){
+    const navMenu = document.getElementById('nav-menu')
+    navMenu.classList.remove('show')
+}
+navLink.forEach(n => n.addEventListener('click',linkAction))
 
-if(currentTheme){
-      bodyElement.classList.add('dark-theme');
-};
+// Scroll section active link
+ const sections = document.querySelectorAll('section[id]')
+ window.addEventListener('scroll',scrollActive)
+ function scrollActive(){
+     const scrollY = window.pageYOffset
+     sections.forEach(current =>{
+         const sectionHeight = current.offsetHeight
+         const sectionTop = current.offsetTop - 50;
+         sectionId = current.getAttribute('id')
+         if(scrollY > sectionTop && scrollY <= sectionTop + sectionHeight){
+             document.querySelector('.nav_menu a[href*=' + sectionId + ']').classList.add('active')
 
-const toggleTheme = () => {
-      bodyElement.classList.toggle('dark-theme');
+         }else{
+             document.querySelector('.nav_menu a[href*=' + sectionId + ']').classList.remove('active')
 
-      if(bodyElement.classList.contains('dark-theme')){
-            localStorage.setItem('darkTheme', 'active');
+         }
+     })
+ }
 
-      }else{
-            localStorage.removeItem('darkTheme');
-      }
-};
-themeToggleButton.addEventListener('click', toggleTheme);
+window.sr = ScrollReveal({
+    origin: 'top',
+    distance: '80px',
+    duration: 1500,
+    reset: true
+})
 
-const sr = ScrollReveal({
-      distance: '50px',
-      duration: 1500,
-      easing: 'cubic-bezier(0.68, -0.55, 0.265, 1.55)'
-});
+sr.reveal('.title_small',{})
+sr.reveal('.home_title',{delay:300})
+sr.reveal('.title_para',{delay:500})
+sr.reveal('.home_img',{origin:'right',delay:400})
+sr.reveal('.email_home',{delay:500})
 
-sr.reveal('.main-title', {origin: 'top'});
-sr.reveal('.scroll-reveal-left', {origin: 'left'});
-sr.reveal('.scroll-reveal-right', {origin: 'right'});
-sr.reveal('.tech-stack-item', {interval: 250});
-sr.reveal(`.section-title, .section-subtitle-container`, {
-      origin: 'top',
-      interval: 250
-});
-sr.reveal('.portfolio-card', {interval: 500});
-sr.reveal(`.form-container, .footer`, {
-      origin: 'top',
-});
+sr.reveal('.about_img', {delay: 500})
+sr.reveal('.about_subtitle', {delay: 300})
+sr.reveal('.about_profession', {delay: 400})
+sr.reveal('.about_text', {delay: 500})
+sr.reveal('.about_social-icon', {delay: 300, interval: 200})
+
+sr.reveal('.skills_subtitle', {})
+sr.reveal('.skills_name', {distance: '20px', delay: 50, interval: 100})
+sr.reveal('.skills_img', {delay: 400})
+
+sr.reveal('.works_img', {interval: 200})
+
+sr.reveal('.contact_info', {})
+sr.reveal('.email-link', {interval: 200})
+sr.reveal('.contact_social-icon', {delay: 300})
+
