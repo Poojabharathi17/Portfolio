@@ -417,7 +417,7 @@
     margin-top: 1.5rem;
   }
   .works_details{
-    background-color: #17ff06;
+    background-color: #1a1a1a;
     text-align: center;
     padding: 1.5rem;
   }
@@ -683,3 +683,52 @@
         text-align: center;
     }
   }
+  @media (orientation:portrait)
+{
+  .l-header{
+    width: 100%;
+  }
+  .l-main{
+    width: 100%;
+  }
+  .about_img{
+    width: 200px;
+    height: 200px;
+  }
+  .home_img{
+    width: 0px;
+    height: 0px;
+    animation: none;
+  }
+  .works_link-name{
+    width: 200px;
+    height: 200px;
+  }
+  .works_container .works_link-name img{
+    width: 300px;
+    height: 200px;
+    border-radius: 30px;
+    padding-left: 0;
+  }
+  .skill_img{
+    width: 0px;
+    height: 0%;
+  }
+  .about_para{
+    width: 400px;
+  }
+  .skills.section
+  {
+    width: 100%;
+  }
+  .nav_toggle i
+  {
+    margin-right: 70px;
+  }
+  .contact.section
+  {
+    width: 100%;
+  }
+}
+    
+  
