@@ -4,6 +4,6 @@ You can view my portfolio using the given Netlify link below:
 https://poojabharathi-portfolio.netlify.app/
 
 
+<img width="932" alt="image" src="https://github.com/Poojabharathi17/Portfolio/assets/106250368/5b002f1a-ed4d-4d30-b642-d95ed4408c3c">
 
-![image](https://user-images.githubusercontent.com/106250368/186483853-05ab9c6a-1f5b-4e49-ad6b-ebfa99a7f4ad.png)
 
