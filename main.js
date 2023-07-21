@@ -71,4 +71,3 @@ sr.reveal('.works_img', {interval: 200})
 sr.reveal('.contact_info', {})
 sr.reveal('.email-link', {interval: 200})
 sr.reveal('.contact_social-icon', {delay: 300})
-
